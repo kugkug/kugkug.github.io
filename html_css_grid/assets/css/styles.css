@@ -1,0 +1,52 @@
+body, html {
+    padding: 0px;
+    margin: 0px;
+
+    height: 100%;
+    font-size: 42px;
+}
+
+
+main {
+    background-color: aqua;
+    height: 100%;
+    width: 1024px;
+    margin: 0px auto;
+
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-template-areas: 
+    "pang-una-box pangalawa-box"
+    "pangatlo-box  pangatlo-box";
+;
+}
+
+section:first-child {
+    background-color: beige;
+    grid-area: pangatlo-box;
+}
+
+section:nth-child(2) {
+    background-color:burlywood;
+    grid-area: pangalawa-box;
+}
+
+/* section:nth-child(3) {
+    background-color:darkmagenta;
+} */
+
+
+/* section:nth-child(4) {
+    background-color:darkslategrey;
+}
+
+section:nth-child(5) {
+    background-color:goldenrod;
+} */
+
+
+section:last-child {
+    background-color:cornflowerblue;
+    
+    grid-area: pang-una-box;
+}

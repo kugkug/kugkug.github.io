@@ -1,0 +1,59 @@
+body, html {
+    margin: 0px;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div-container > div {
+    display: flex;
+}
+
+#div-container > div > div {
+    height: 200px;
+    width: 200px;
+
+    border-radius: 50%;
+}
+
+#div-container div:first-child div:first-child {
+    background-color: red;
+}
+
+#div-container div:first-child div:last-child {
+    background-color: green;
+}
+
+#div-container div:last-child div:first-child {
+    background-color: blue;
+}
+
+#div-container div:last-child div:last-child {
+    background-color: yellow;
+}
+
+#div-container {
+
+    height: 400px;
+    width: 400px;
+    transform: rotate(45deg);
+
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

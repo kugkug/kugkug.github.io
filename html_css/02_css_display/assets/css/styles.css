@@ -1,0 +1,241 @@
+body, html {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+
+    scroll-behavior:smooth;
+    font-size: 24px;
+}
+
+main {
+    /* height: 100%; */
+    /* width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+section {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+section.flex {
+    background-color: aquamarine;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.flex > div {
+    background-color: beige;
+    height: 600px;
+    min-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+#div-color-wheel {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border-top: 10px solid red;
+    border-right: 10px solid green;
+    border-bottom: 10px solid blue;
+    border-left: 10px solid yellow;
+
+    /* animation: wheel 2s timing-function delay iteration-count direction fill-mode; */
+    animation-name: color-wheel;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    transform: rotate(90deg);
+}
+
+@keyframes color-wheel {
+    from {
+        transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#div-image-roll {
+    width: 1000px;
+    display: flex;
+    overflow: hidden;
+}
+
+#div-image-roll .div-image {
+    width: 1000px;
+    display: inline-block;
+    /* display: none; */
+} 
+
+
+#div-image-roll .div-image img {
+    width: 100%;
+    height: 600px;
+}
+
+.div-image:first-child {
+    position: relative;
+    animation-name: carousel1;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.div-image:nth-child(2) {
+    position: relative;
+    animation-name: carousel2;
+    animation-delay: 4s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.div-image:last-child {
+    position: relative;
+    animation-name: carousel3;
+    animation-duration: 3s;
+    animation-delay: 8s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes carousel1 {
+    from {
+       left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes carousel2 {
+    from {
+       left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes carousel3 {
+    from {
+       left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+.flex > div:nth-child(3) {
+    width: 100% !important;
+}
+
+.flex > div:nth-child(3) > div {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+}
+
+#left-board {
+    background-color: rgba(0,0,0,.5);
+    height: 200px;
+    width: 150px;
+
+    transform: skew(0deg, -70deg);
+
+    background-image: url("../images/brick.jpg");
+    background-size: cover;
+}
+
+#right-board {
+    margin-right: 25px;
+    background-color: rgba(0,0,0,.5);
+    height: 200px;
+    width: 150px;
+    transform: skew(0deg, 70deg);
+
+    background-image: url("../images/brick.jpg");
+    background-size: cover;
+}
+
+.flex > div:nth-child(3) img {
+    position: absolute;
+    width: 200px;
+
+    animation-name: goal;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes goal {
+    0% {
+        left: 10%;
+        transform: rotate(0deg);
+        transition: .6 ease;
+    }
+
+    50% {
+        left: 80%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        left: 10%;
+        transform: rotate(-360deg);
+        transition: .6 ease;
+    }
+}
+
+
+.flex > div:nth-child(4) {
+    width: 100% !important;
+    background-image: url("../images/highway.jpg");
+    background-size: 100% 100%;
+    background-position: 2000px 0px;
+
+    animation-name: race;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    align-items:last baseline;
+    padding-bottom: 10px;
+}
+
+.flex > div:nth-child(4) img {
+    width: 100px;
+    position: absolute;
+    left: 100px !important;
+}
+
+
+
+@keyframes race {
+    from {
+        background-position: 2000px;
+    }
+
+    to {
+        background-position: 0px;
+    }
+}

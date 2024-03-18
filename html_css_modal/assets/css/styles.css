@@ -1,0 +1,39 @@
+body, html {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.modal:hover {
+    display: block;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
+
+button:focus + div  {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.modal {
+    background-color: rgba(0,0,0, 0.5);
+    height: 0px;
+    overflow: hidden;
+    position: fixed;
+    width: 0px;
+    top: 0px;
+    display: none;
+    opacity: 0;
+    transition: opacity .4s linear;
+}
+
+.modal-body {
+    background-color: #FFFFFF;
+    height: 400px;
+    width: 600px;
+    margin: 15% auto;
+    position: relative;
+}
+
